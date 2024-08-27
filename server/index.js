@@ -31,7 +31,7 @@ app.use(session({
 // Cookies
 app.use(cookieParser());
 
-// BASE_URL
+// makes the BASE_URL available in handlebars` template
 app.use((req, res, next) => {
     const { locals } = res;
     locals.BASE_URL = process.env.BASE_URL;
@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
 require('./platform/routes/beer')(app);
 
 // Run Server
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`BeerMeUp server listening at http://localhost:${port}`);
 });
