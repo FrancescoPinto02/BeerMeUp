@@ -1,15 +1,15 @@
-const beerService = require('../../services/beer');
+const BeerService = require('../../services/beer');
 const utils = require('../../utils/utils');
 
-const beerController = {};
-
-beerController.GetAll = async (req, res) => {
+exports.getBeerById = async (req, res) => {
     try {
-        const beers = await beerService.getAll();
-        res.render('test', { beers: utils.convertToPlain(beers) });
-    } catch (error) {
-        res.render('error', { error: error.message });
+        const {beerId} = req.params;
+        const beer = await BeerService.getBeerById(beerId);
+        if(!beer) {
+            return res.status(404).render("error", {message: 'Beer not found.' });
+        }
+        return res.status(200).render("test", {beer: utils.convertToPlain(beer)});
+    }catch(error) {
+        return res.status(500).render("error", {message: error.message});
     }
-};
-
-module.exports = beerController;
+}

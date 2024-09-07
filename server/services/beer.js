@@ -1,14 +1,10 @@
-const beerModel = require('../models/beer');
+const Beer = require('../models/beer');
 
-const beerService = {};
-
-beerService.getAll = async () => {
-    const beers = await beerModel.Beer.findAll();
-    if (!beers) {
-        throw new Error('Error retrieving beers data!');
+exports.getBeerById = async (id) => {
+    try {
+        const beer = await Beer.findByPk(id);
+        return beer;
+    } catch (error) {
+        throw new Error(`Error fetching beer: ${error.message}`);
     }
-
-    return beers;
 };
-
-module.exports = beerService;

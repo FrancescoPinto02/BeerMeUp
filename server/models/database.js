@@ -1,4 +1,5 @@
 const {Sequelize} = require('sequelize');
+const databaseAssociations = require('./databaseAssociations');
 
 // Database Connection
 const sequelize = new Sequelize(
@@ -18,7 +19,7 @@ const sequelize = new Sequelize(
             raw: false
         },
         define: {
-            underscored: false,
+            underscored: true,
             freezeTableName: false,
             timestamps: false,
             charset: 'utf8',
@@ -36,6 +37,8 @@ const sequelize = new Sequelize(
 sequelize.authenticate()
     .then(() => {
         console.log('Connection has been established successfully.');
+        databaseAssociations.createAssociations();
+        console.log('Associations created successfully.');
     })
     .catch((error) => {
         console.error('Unable to connect to the database:', error);

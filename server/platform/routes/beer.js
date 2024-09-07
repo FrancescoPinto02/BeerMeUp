@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const beerController = require('../controllers/beer');
+const BeerController = require('../controllers/beer');
 const testMiddleware = require('../../middleware/test');
 
 module.exports = (app) => {
-    router.get('/', testMiddleware, beerController.GetAll);
+    router.get('/:beerId', testMiddleware, BeerController.getBeerById);
 
     app.use('/beer', router);
 };
