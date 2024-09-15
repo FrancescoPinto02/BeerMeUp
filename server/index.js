@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const expressHbs = require('express-handlebars');
 const helperHbs = require('./models/handlebars-helpers');
+const errorHandler = require('./middleware/errorHandler');
 
 // App Express
 const app = express();
@@ -54,6 +55,9 @@ app.get('/', (req, res) => {
     res.redirect('/welcome.html');
 });
 require('./platform/routes/beer')(app);
+
+// Error Handler Middleware Config
+app.use(errorHandler);
 
 // Run Server
 const port = process.env.PORT || 3000;

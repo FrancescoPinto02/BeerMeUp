@@ -10,13 +10,15 @@
 <div>
     <h2>{{beer.name}}</h2>
     <p>Id: {{beer.id}}</p>
-    <p>Birrificio: {{beer.breweryId}}</p>
+    <p>Birrificio: {{beer.brewery.name}}</p>
     <p>Stile: {{beer.style}}</p>
     <p>IBU: {{beer.ibu}}</p>
     <p>ABV: {{beer.abv}}%</p>
     <p>Ounces: {{beer.ounces}}</p>
     <p>Stock: {{beer.stock}}</p>
     <p>Prezzo: ${{beer.price}}</p>
+
+    <img src="/img/beers/default.png" alt="{{beer.name}}" style="width: 300px; height: auto;"/>
 </div>
 </body>
 </html>
