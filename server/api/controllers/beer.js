@@ -1,5 +1,4 @@
 const beerService = require('../../services/beer');
-const utils = require('../../utils/utils');
 
 exports.getBeers = async (req, res, next) => {
     const {page, limit} = req.query;
