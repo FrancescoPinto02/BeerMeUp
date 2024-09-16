@@ -7,6 +7,6 @@ exports.getBeerById = async (req, res, next) => {
         const beer = await beerService.getBeerById(beerId);
         return res.status(200).render("test", {beer: utils.convertToPlain(beer)});
     }catch(error) {
-        next(error)
+        next(error);
     }
 }
