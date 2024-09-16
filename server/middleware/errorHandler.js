@@ -1,6 +1,5 @@
-const createError = require('http-errors');
-
 // Error Handler Middleware
+// eslint-disable-next-line consistent-return
 const errorHandler = (err, req, res, next) => {
     const statusCode = err.statusCode || 500;
     const message = err.message || 'Internal Server Error';
@@ -17,6 +16,8 @@ const errorHandler = (err, req, res, next) => {
 
     // Default Response
     res.status(statusCode).send(message);
+
+    next();
 };
 
 module.exports = errorHandler;

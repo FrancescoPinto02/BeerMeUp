@@ -2,12 +2,12 @@ const {DataTypes } = require('sequelize');
 const sequelize = require('./database');
 
 const Brewery = sequelize.define('Brewery', {
-   id: {
-       type: DataTypes.INTEGER,
-       primaryKey: true,
-       autoIncrement: true,
-       allowNull: false,
-   },
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+    },
     name: {
         type: DataTypes.STRING(64),
         allowNull: false,

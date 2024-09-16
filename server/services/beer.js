@@ -1,13 +1,13 @@
 const Beer = require('../models/beer');
 const Brewery = require('../models/brewery');
-const createError = require('http-errors')
+const createError = require('http-errors');
 const { isValidId } = require('../validators/idValidator');
 const { isValidPage, isValidLimit } = require('../validators/paginationValidator');
 
 const DEF_PAGE = 1;
 const DEF_LIMIT = 16;
 
-exports.getBeerById = async (id) => {
+exports.getBeerById = async id => {
     if (!isValidId(id)) {
         throw createError(400, 'Invalid Beer ID');
     }
@@ -26,7 +26,7 @@ exports.getBeerById = async (id) => {
     return beer;
 };
 
-exports.getBeers = async (page=DEF_PAGE, limit=DEF_LIMIT) => {
+exports.getBeers = async(page=DEF_PAGE, limit=DEF_LIMIT) => {
     if(!isValidPage(page)) {
         throw createError(400, 'Invalid page number. It must be a positive integer.');
     }
@@ -51,4 +51,4 @@ exports.getBeers = async (page=DEF_PAGE, limit=DEF_LIMIT) => {
         page,
         totalPages: Math.ceil(total / limit),
     };
-}
+};

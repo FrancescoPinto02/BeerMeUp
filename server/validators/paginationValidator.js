@@ -27,7 +27,7 @@ const MAX_LIMIT = 64;
  * const isValid = isValidPage('abc'); // false
  * const isValid = isValidPage('1a'); // false
  */
-exports.isValidPage = (page) => {
+exports.isValidPage = page => {
     const parsedPage = parseInt(page, 10);
     return (
         Number.isInteger(parsedPage) &&
@@ -59,7 +59,7 @@ exports.isValidPage = (page) => {
  * const isValid = isValidLimit('abc'); // false
  * const isValid = isValidLimit('1a'); // false
  */
-exports.isValidLimit = (limit) => {
+exports.isValidLimit = limit => {
     const parsedLimit = parseInt(limit, 10);
     return (
         Number.isInteger(parsedLimit) &&

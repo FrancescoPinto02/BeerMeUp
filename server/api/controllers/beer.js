@@ -1,9 +1,7 @@
 const beerService = require('../../services/beer');
 
-exports.getBeers = async (req, res, next) => {
+exports.getBeers = async(req, res, next) => {
     const {page, limit} = req.query;
-    console.log(page);
-    console.log(limit);
     try {
         const beers = await beerService.getBeers(parseInt(page), parseInt(limit));
         res.status(200).json(beers);

@@ -23,7 +23,7 @@
  * isValidId(NaN);           // returns false
  * isValidId(null);          // returns false
  */
-exports.isValidId = (id) => {
+exports.isValidId = id => {
     const parsedId = parseInt(id, 10);
     return Number.isInteger(parsedId) && parsedId > 0 && id.toString() === parsedId.toString();
 };

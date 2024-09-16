@@ -36,11 +36,14 @@ const sequelize = new Sequelize(
 // Testing Connection
 sequelize.authenticate()
     .then(() => {
+        // eslint-disable-next-line no-console
         console.log('Connection has been established successfully.');
         databaseAssociations.createAssociations();
+        // eslint-disable-next-line no-console
         console.log('Associations created successfully.');
     })
-    .catch((error) => {
+    .catch(error => {
+        // eslint-disable-next-line no-console
         console.error('Unable to connect to the database:', error);
     });
 
