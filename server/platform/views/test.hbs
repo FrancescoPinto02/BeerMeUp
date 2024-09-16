@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="it">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dettagli della Birra</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="ecommerce, market, shop, mart, cart, deal, multipurpose, marketplace">
+    <meta name="description" content="BeerMeUp - Craft Beers eCommerce.">
+    <meta name="author" content="ashishmaraviya">
+
+    <title>BeerMeUp - Craft Beers eCommerce</title>
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{BASE_URL}}/assets/img/logo/favicon.png">
+
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="{{BASE_URL}}/assets/css/vendor/materialdesignicons.min.css">
+    <link rel="stylesheet" href="{{BASE_URL}}/assets/css/vendor/remixicon.css">
+
+    <!-- Vendor -->
+    <link rel="stylesheet" href="{{BASE_URL}}/assets/css/vendor/animate.css">
+    <link rel="stylesheet" href="{{BASE_URL}}/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="{{BASE_URL}}/assets/css/vendor/aos.min.css">
+    <link rel="stylesheet" href="{{BASE_URL}}/assets/css/vendor/range-slider.css">
+    <link rel="stylesheet" href="{{BASE_URL}}/assets/css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{{BASE_URL}}/assets/css/vendor/jquery.slick.css">
+    <link rel="stylesheet" href="{{BASE_URL}}/assets/css/vendor/slick-theme.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{BASE_URL}}/assets/css/style.css">
 </head>
 <body>
+{{> loader}}
+{{> header}}
+{{> mobile-menu}}
 <h1>Dettagli della Birra</h1>
 <div>
     <h2>{{beer.name}}</h2>
@@ -20,5 +48,23 @@
 
     <img src="/img/beers/default.png" alt="{{beer.name}}" style="width: 300px; height: auto;"/>
 </div>
+
+{{> footer}}
+{{> tab-to-top}}
+{{> cart}}
+{{> side-tool}}
+
+<!-- Vendor Custom -->
+<script src="{{BASE_URL}}/assets/js/vendor/jquery-3.6.4.min.js"></script>
+<script src="{{BASE_URL}}/assets/js/vendor/jquery.zoom.min.js"></script>
+<script src="{{BASE_URL}}/assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="{{BASE_URL}}/assets/js/vendor/mixitup.min.js"></script>
+<script src="{{BASE_URL}}/assets/js/vendor/range-slider.js"></script>
+<script src="{{BASE_URL}}/assets/js/vendor/aos.min.js"></script>
+<script src="{{BASE_URL}}/assets/js/vendor/swiper-bundle.min.js"></script>
+<script src="{{BASE_URL}}/assets/js/vendor/slick.min.js"></script>
+
+<!-- Main Custom -->
+<script src="{{BASE_URL}}/assets/js/main.js"></script>
 </body>
 </html>
