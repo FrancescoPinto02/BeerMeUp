@@ -55,6 +55,7 @@ app.get('/', (req, res) => {
     res.redirect('/welcome.html');
 });
 require('./platform/routes/beer')(app);
+require('./platform/routes/shop')(app);
 require('./api/routes/beer')(app);
 
 // Error Handler Middleware Config
